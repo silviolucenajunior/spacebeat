@@ -1,6 +1,7 @@
 var _core  = {
    preload : function(){
-      console.log("Preeload Function");
+      console.log("Core Preload");
+      player.preload();
    },
    create: function(){
       console.log("Create Function");
