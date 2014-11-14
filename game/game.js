@@ -5,9 +5,10 @@ var _core  = {
    },
    create: function(){
       console.log("Create Function");
+      player.create();
    },
    update: function(){
-
+      player.update();
    }
 };
 
