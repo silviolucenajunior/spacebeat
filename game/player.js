@@ -60,15 +60,15 @@ var player = {
       }
 
       if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
-         _self.x += speed;
+         _self.x += _self.speed;
       } else if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
-         _self.x -= speed;
+         _self.x -= _self.speed;
       }
 
       if (game.input.keyboard.isDown(Phaser.Keyboard.UP)){
-         _self.y -= speed;
+         _self.y -= _self.speed;
       } else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
-         _self.y += speed;
+         _self.y += _self.speed;
       }
    },
    /**
@@ -106,21 +106,22 @@ var player = {
       }
    },
    _createBullet: function(position, damage){
-
+      console.log("Create Buller");
    },
    _createShild: function(){
-
+      console.log("Create Shield");
    },
    _createBomb: function(){
-
+      console.log("Create Bomb");
    },
    _createBean: function(){
-
+      console.log("Create Bean");
    },
    _startChargeBean: function(){
-
+      console.log("Changing bean...");
    },
    _releaseChargeBean: function(){
+      console.log("Release Brean");
 
    },
    rapidFire: function(){
