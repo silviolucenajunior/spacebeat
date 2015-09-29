@@ -7,7 +7,7 @@ var player = {
     * BEGIN PLAYER PROPERTIES *
     ***************************/
    fireDelay: 200, //Delay between fires
-   fireLevel : 1,
+   fireLevel : 1, //Level o normal fire
    energy: 100, //Current Energy of player. Energy is used by player to do actions
    health: 100, //Current Health of player. If Health 0 player die and lost life
    lifes : 3, //Lifes remains before game over
@@ -107,6 +107,8 @@ var player = {
    },
    _createBullet: function(position, damage){
       console.log("Create Buller");
+      console.log(position);
+      console.log(damage);
    },
    _createShild: function(){
       console.log("Create Shield");
