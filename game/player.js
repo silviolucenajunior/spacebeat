@@ -1,5 +1,6 @@
 "use strict";
-var _self ;
+var _self;
+var debugStatus;
 
 var player = {
 
@@ -48,13 +49,70 @@ var player = {
       }
    },
 
-   create: function(){
+   create: function(options){
       console.log("Player Create");
       _self = game.add.sprite(320, 240, 'player');
+      _self.gamepad = options.gamepad;
    },
 
    update: function(){
       _self.speed = 4;
+      _self.gamepad.update();
+
+      if (_self.gamepad.status.right){
+         _self.x += _self.speed;
+      } else if (_self.gamepad.status.left) {
+         _self.x -= _self.speed;
+      }
+
+      if (_self.gamepad.status.up){
+         _self.y -= _self.speed;
+      } else if (_self.gamepad.status.down) {
+         _self.y += _self.speed;
+      }
+
+      if (_self.gamepad.status.hiperSpeed) {
+         _self.speed = 6;
+         _self.hiperSpeed = true;
+      } else {
+         _self.speed = 4;
+         _self.hiperSpeed = false;
+      }
+
+      if (_self.gamepad.status.buttonA) {
+         console.log("APRESSED");
+         _self.shieldActive = true;
+      } else {
+         _self.shieldActive = false;
+      }
+
+      if (_self.gamepad.status.buttonB) {
+         _self.normalWeapon = true;
+      } else {
+         _self.normalWeapon = false;
+      }
+
+      if (_self.gamepad.status.buttonC) {
+         _self.specialWeapon = true;
+      } else {
+         _self.specialWeapon = false;
+      }
+
+      if (_self.gamepad.status.buttonD) {
+         _self.powerUp = true;
+      } else {
+         _self.powerUp = false;
+      }
+
+      debugStatus = "";
+      debugStatus += "</br>HiperSpeed Activated: " + _self.hiperSpeed;
+      debugStatus += "</br>NormalWeapon Activated: " + _self.normalWeapon;
+      debugStatus += "</br>specialWeapon Activated: " + _self.specialWeapon;
+      debugStatus += "</br>PowerUp Activated: " + _self.powerUp;
+      debugStatus += "</br>Shield Activated: " + _self.shieldActive;
+      document.getElementById('Debug').innerHTML = debugStatus;
+
+      /*
       if (game.input.keyboard.isDown(Phaser.Keyboard.SHIFT)){
          _self.speed = 6;
       }
@@ -69,7 +127,7 @@ var player = {
          _self.y -= _self.speed;
       } else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
          _self.y += _self.speed;
-      }
+      }*/
    },
    /**
     * Map input key to actions keys on object

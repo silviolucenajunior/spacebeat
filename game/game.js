@@ -1,3 +1,4 @@
+var game;
 var _core  = {
    preload : function(){
       console.log("Core Preload");
@@ -5,11 +6,14 @@ var _core  = {
    },
    create: function(){
       console.log("Create Function");
-      player.create();
+      var gamepad = new KeyboardController(game);
+      player.create({
+         gamepad: gamepad
+      });
    },
    update: function(){
       player.update();
    }
 };
 
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '', _core);
+game = new Phaser.Game(800, 600, Phaser.AUTO, '', _core);
