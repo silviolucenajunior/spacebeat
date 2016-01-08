@@ -2,17 +2,19 @@ var game;
 var _core  = {
    preload : function(){
       console.log("Core Preload");
-      player.preload();
+      //player.preload();
    },
    create: function(){
       console.log("Create Function");
       var gamepad = new KeyboardController(game);
-      player.create({
-         gamepad: gamepad
+      var character = new Character1(game);
+      this.player = new Player({
+         inputSource: gamepad,
+         character: character
       });
    },
    update: function(){
-      player.update();
+      this.player.update();
    }
 };
 
