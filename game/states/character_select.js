@@ -53,17 +53,25 @@ CharacterSelectState.prototype = {
 			}
 		});
 
-		game.input.keyboard.addKey(Phaser.Keyboard.Up).onDown.addOnce(function(){
-			if (_self.cursor.y > 0) {
-				_self.cursor.y -= 1;
+		game.input.keyboard.addKey(Phaser.Keyboard.H).onDown.addOnce(function(){
+			switch (_self.cursor.x){
+				case 1:
+				    _self.game.character = new Character1();
+				    break;
+				case 2:
+				    _self.game.character = new Character2();
+				    break;
+				case 3:
+				    _self.game.character = new Character3();
+				    break;
 			}
+			_self.game.state.start("stage1");
 		});
 
-		game.input.keyboard.addKey(Phaser.Keyboard.Down).onDown.addOnce(function(){
-			if (_self.cursor.y < 3) {
-				_self.cursor.y += 1;
-			}
+		game.input.keyboard.addKey(Phaser.Keyboard.K).onDown.addOnce(function(){
+			_self.game.state.start("title");
 		});
+
 	},
 	update: function(){
 
