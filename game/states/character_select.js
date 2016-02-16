@@ -53,7 +53,7 @@ CharacterSelectState.prototype = {
 			}
 		});
 
-		game.input.keyboard.addKey(Phaser.Keyboard.H).onDown.addOnce(function(){
+		game.input.keyboard.addKey(Phaser.Keyboard.ENTER).onDown.addOnce(function(){
 			switch (_self.cursor.x){
 				case 1:
 				    _self.game.character = new Character1();
@@ -68,7 +68,7 @@ CharacterSelectState.prototype = {
 			_self.game.state.start("stage1");
 		});
 
-		game.input.keyboard.addKey(Phaser.Keyboard.K).onDown.addOnce(function(){
+		game.input.keyboard.addKey(Phaser.Keyboard.BACKSPACE).onDown.addOnce(function(){
 			_self.game.state.start("title");
 		});
 

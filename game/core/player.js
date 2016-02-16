@@ -1,6 +1,6 @@
 function Player(options) {
-	this.inputSource = null || options.inputSource;
-	this.character = null || options.character;
+    this.inputSource = null || options.inputSource;
+    this.character = null || options.character;
 }
 
 Player.prototype = {

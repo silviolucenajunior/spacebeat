@@ -6,6 +6,7 @@ var _core  = {
       new PreloadState(game);
       new TitleState(game);
       new CharacterSelectState(game);
+      new Stage1State(game);
       var inputSource = new KeyboardController(game);
       game.inputSource = inputSource;
       //player.preload();
