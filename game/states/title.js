@@ -1,6 +1,6 @@
 function TitleState(game){
 	this.game = game;
-    this.game.state.add("title", this);
+    this.game.scene.add("title", this);
 };
 
 TitleState.prototype = {

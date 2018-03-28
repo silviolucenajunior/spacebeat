@@ -1,6 +1,6 @@
 function IntroState(game){
 	this.game = game;
-	this.game.state.add("intro", this);	
+	this.game.scene.add("intro", this);	
 };
 
 IntroState.prototype = {

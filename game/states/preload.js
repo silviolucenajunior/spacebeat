@@ -1,6 +1,6 @@
 function PreloadState(game){
 	this.game = game;
-	this.game.state.add("preload", this);	
+	this.game.scene.add("preload", this);	
 };
 
 PreloadState.prototype = {

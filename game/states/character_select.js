@@ -8,12 +8,13 @@ function CharacterSelectState(game){
 		y: 0,
 		delay: 300 //300ms second to detect
 	};
-	this.game.state.add("character-select", this);
+	this.game.scene.add("character-select", this);
 };
 
 CharacterSelectState.prototype = {
 	constructor: CharacterSelectState,
 	preload: function(){
+		console.log("Preaload of scene");
 		var _self = this;
 		game.load.image('portrait01', 'assets/images/dev/portrait_01.png');
 		game.load.image('portrait02', 'assets/images/dev/portrait_02.png');
@@ -22,6 +23,7 @@ CharacterSelectState.prototype = {
 		game.load.audio('beep','assets/sound/fx/beep.mp3');
 	},
 	create: function(){
+		console.log("Create screne on character select");
 		var _self = this;
 		_self.game.add.sprite(30, 60, 'portrait01');
 		_self.game.add.sprite(280, 60, 'portrait02');
@@ -76,9 +78,7 @@ CharacterSelectState.prototype = {
 	update: function(){
 
 	},
-	reder: {
-		cursor: function(){
-
-		}
+	render: function() {
+		console.log("On render");
 	}
 };

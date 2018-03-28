@@ -1,6 +1,6 @@
 function Stage1State(game){
 	this.game = game;
-    this.game.state.add("stage1", this);
+    this.game.scene.add("stage1", this);
 };
 
 Stage1State.prototype = {

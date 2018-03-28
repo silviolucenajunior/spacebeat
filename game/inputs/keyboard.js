@@ -1,7 +1,6 @@
 "use strict";
 
-function KeyboardController(game){
-	this.game = game;
+function KeyboardInput(){
 	this.status = {
 		left: false,
 		right: false,
@@ -14,7 +13,7 @@ function KeyboardController(game){
 	}
 }
 
-KeyboardController.prototype = {
+KeyboardInput.prototype = {
 	_startListerner: function() {
 	},
 	update: function() {
@@ -47,7 +46,6 @@ KeyboardController.prototype = {
         	this.status.hiperSpeed = true;
         }
         if (game.input.keyboard.isDown(Phaser.Keyboard.A)){
-        	console.log("A");
         	this.status.buttonA = true;
         }
         if (game.input.keyboard.isDown(Phaser.Keyboard.S)){
